@@ -1,0 +1,473 @@
+/* @import url("/icon/ant-design_search-outlined.svg"); */
+
+:root {
+  --gradient: Linear-gradient(
+    -100deg,
+    #405de6 0.01%,
+    #833ab4 21.88%,
+    #c13584 47.92%,
+    #e1306c 67.71%,
+    #fd1d1d 84.38%
+  );
+  --bg: #0b0e27;
+  --primary: white;
+  --accent: #0b6af9;
+  --default: #a4a4a4;
+
+  --stat_bg: rgba(255, 255, 255, 0.1);
+  --search_bg: rgba(150, 150, 255, 0.2);
+  --active_menu_bg: rgba(150, 150, 255, 0.1);
+}
+
+body {
+  font-family: "Sarala", sans-serif;
+  min-height: 100vh;
+  color: var(--primary);
+  background: var(--bg);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+/* Border Gradient */
+.gradient {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+  border-radius: 500px;
+  background-color: var(--bg);
+}
+
+.gradient > img {
+  border-radius: 500px;
+}
+
+.gradient::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: var(--gradient);
+}
+
+/* Layout */
+.content {
+  display: flex;
+}
+
+.sidebar {
+  position: relative;
+  max-width: 452px;
+  margin-right: 20px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  flex-grow: 1;
+  padding-right: 56px;
+}
+
+/* Layput */
+
+.header {
+  padding: 24px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.insta_search {
+  height: 31.250137329101562px;
+  width: 31.250137329101562px;
+  left: 4.375px;
+  top: 4.375px;
+  border-radius: 0px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+  background-color: var(--search_bg);
+  padding: 4px 16px;
+}
+
+.search input {
+  flex-grow: 1;
+  margin-left: 50px;
+  /* padding: 8px ; */
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.actions {
+  display: flex;
+}
+
+.action__item {
+  cursor: pointer;
+  font-size: 42px;
+}
+
+.action__item:not(:last-child) {
+  margin-right: 22px;
+}
+
+.new-post-button {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 2px 8px;
+  background: var(--gradient);
+  margin-left: 20px;
+}
+
+.new-post-button img {
+  display: inline-block;
+  padding: 9px;
+  font-size: 12px;
+  margin-right: 22px;
+}
+
+.new-post-button span {
+  font-size: 25px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Sidebar */
+
+.sidebar__fixed {
+  position: sticky;
+  top: 0;
+}
+
+.sidebar .user {
+  margin-bottom: 100px;
+}
+
+.user {
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-bottom: 100px; */
+}
+
+.user__avatar {
+  display: block;
+  width: 240px;
+  height: 240px;
+  border: 2px solid var(--bg);
+}
+
+.user__avatar > img {
+  width: 100%;
+}
+
+.user__name {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.user__name img {
+  margin-left: 8px;
+  font-size: 0.6em;
+}
+
+.user__nickname {
+  font-size: 28px;
+  color: var(--default);
+  margin-bottom: 15px;
+}
+
+.user__stat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user__stat_item {
+  display: flex;
+  margin: 0 22px;
+  align-items: center;
+  padding: 12px 18px;
+  background-color: var(--stat_bg);
+  border-radius: 10px;
+  font-size: 35px;
+}
+
+.user__stat_item img {
+  height: 37.50193405151367px;
+  width: 41.66667175292969px;
+  left: 4.166717529296875px;
+  top: 6.248077392578125px;
+  border-radius: 0px;
+}
+
+.user__stat_item img {
+  font-size: 1.2em;
+  margin-right: 16px;
+}
+
+.user_small .user__avatar {
+  width: 130px;
+  height: 130px;
+  border: 1px solid var(--bg);
+}
+
+.user_small .user__nickname {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.user_row {
+  cursor: pointer;
+  flex-direction: row;
+}
+
+.user_row .user__avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+  overflow: hidden;
+}
+
+.user_row .user__nickname {
+  font-size: 15px;
+  margin-left: 6px;
+  margin-bottom: 0;
+}
+
+/* .menu {
+} */
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  padding: 16px 62px;
+  border-radius: 10px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 35px;
+}
+
+.menu__item:not(:last-child) {
+  margin-top: 22px;
+}
+
+.menu__item img {
+  font-size: 1.2em;
+  margin-right: 78px;
+}
+
+/* .menu__item span {
+} */
+
+/*На всякий случай, просто в Фигме Home так и стоит задний фон*/
+.menu__item:hover,
+.menu_item_active {
+  position: relative;
+  background: var(--active_menu_bg);
+}
+
+/* .menu_item_active::after */
+.menu__item:hover::after,
+.menu_item_active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 12px;
+  border-radius: 10px;
+  background: var(--gradient);
+}
+
+/* Stories */
+
+.stories {
+  flex-grow: 1;
+  margin-bottom: 36px;
+}
+
+.stories__slider {
+  width: 100%;
+}
+
+.strories__slider-content {
+  display: flex;
+  align-items: center;
+}
+
+.strories__slider-next {
+  cursor: pointer;
+  font-size: 32px;
+  margin-left: 18px;
+  padding: 4px 16px;
+}
+
+.strories__slider-item:not(:last-child) {
+  margin-right: 60px;
+}
+
+/* post */
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -22px;
+  margin-top: 0;
+}
+
+.posts .post {
+  margin: 22px;
+}
+.posts > div {
+  margin: -22px 11px 0;
+  width: 378px;
+}
+
+.posts .post {
+  width: 100%;
+}
+
+.posts .post__img {
+  width: 100% !important;
+}
+
+/* elements */
+
+.title {
+  font-size: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* post elem */
+
+.post__img {
+  width: 378px;
+  height: 570px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.post__img img {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.post__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.post__actions {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+}
+
+.post__action {
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.post__action:not(:last-child) {
+  margin-right: 14px;
+}
+
+.post-horizontal .post__img {
+  width: 476px;
+  height: 318px;
+}
+.post-horizontal .post__img img {
+  width: 100%;
+  height: initial;
+}
+
+.modal__wrap {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 32px;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  min-width: 480px;
+  width: 70vw;
+  height: min-content;
+  border-radius: 25px;
+  padding: 32px;
+  color: black;
+  background-color: powderblue;
+  text-align: center;
+}
+
+.modal > *:not(last-chiild) {
+  margin-bottom: 8px;
+}
+
+.modal > label {
+  display: block;
+  text-align: left;
+  margin-bottom: 4px !important;
+}
+
+.modal > input {
+  width: 100%;
+  height: 30px;
+}
+
+.modal__text {
+  padding: 8px;
+  width: 100%;
+  min-height: 500px;
+}
+
+.modal__btn {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 4px 16px;
+  margin-top: 26px;
+  color: white;
+  background: var(--accent);
+}
+
+.modal__error {
+  border: 3px solid red;
+}
